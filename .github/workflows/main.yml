@@ -18,11 +18,11 @@ jobs:
       - name: Install dependencies
         run: npm install sitemap-generator-cli -g
       - name: Generate sitemap
-        run: sitemap-generator-cli https://example.com --filepath sitemap.xml
+        run: npx sitemap-generator-cli https://libraryguides.fullerton.edu/ --filepath sitemap.xml
       - name: Commit sitemap
         run: |
-          git config user.name "GitHub Action"
-          git config user.email "action@github.com"
+          git config user.name "cagu2000"
+          git config user.email "cagu2000@csu.fullerton.edu"
           git add sitemap.xml
           git commit -m "Update dynamic sitemap" || echo "No changes to commit"
           git push
