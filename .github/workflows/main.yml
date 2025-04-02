@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm install sitemap-generator-cli -g
       - name: Generate sitemap
-        run: npx sitemap-generator-cli https://libraryguides.fullerton.edu/ --filepath sitemap.xml
+        run: npx sitemap-generator-cli https://libraryguides.fullerton.edu/?b=g&d=a --filepath sitemap.xml
       - name: Commit sitemap
         run: |
           git config user.name "cagu2000"
