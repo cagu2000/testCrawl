@@ -16,9 +16,9 @@ jobs:
         with:
           node-version: '18'
       - name: Install dependencies
-        run: npm install sitemap-generator-cli -g
+        run: npm install -g sitemap-generator-cli
       - name: Generate sitemap
-        run: npx sitemap-generator-cli https://libraryguides.fullerton.edu/* --filepath sitemap.xml
+        run: npx sitemap-generator-cli -g https://libraryguides.fullerton.edu/* --filepath sitemap.xml
       - name: List files
         run: ls -al
       - name: Commit sitemap
