@@ -29,12 +29,17 @@ jobs:
       run: |
         python -m pip install --upgrade pip setuptools
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Begin working with Requests
+    - name: Install packages
       run: |
         python -m pip install requests
+        python -m pip install BeautifulSoup4 
+        python -m pip install lxml
+    - name: Begin working with packages
+      run: |
 
-        python -c "import requests; 
-        url_to_parse = 'https://en.wikipedia.org/wiki/Python_(programming_language)'; 
-        response = requests.get(url_to_parse); 
-        print(response.text)"
+        import requests
+        from bs4 import BeautifulSoup
+        response = requests.get("https://en.wikipedia.org/wiki/Web_scraping")
+        bs = BeautifulSoup(response.text,"lxml")
+        print(bs.find("p").text)"
     
